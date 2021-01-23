@@ -1,0 +1,28 @@
+.content-btn{
+    padding: 5px;
+    margin: 20px;
+    border: 0px;
+    font-weight: bolder;
+    font-size: larger;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+}
+.main-container-btn{
+    padding: 10px;
+}
+.month{
+    margin: 3px;
+}
+#content{
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 25px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+}

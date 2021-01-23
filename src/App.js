@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import PassedHolidays from "./PassedHolidays";
+import UpcomingHolidays from "./UpcomingHolidays";
+class App extends Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  constructor(props){
+    super(props)
+    this.state={
+        tabtype: 'Upcoming'
+    }
+  }
+  toggleMe=(value)=>{
+    this.setState({
+        tabtype:value,   
+    })
+  };
+
+  render(){
+    return(
+      <div className="main-container">
+        <div>NO Holiday</div>
+        <div className="btns">
+          <button className="btn" onClick={()=>this.toggleMe('Upcoming')}>Upcoming Holidays</button>
+          <button className="btn" onClick={()=>this.toggleMe('Passed')}>Passed Holidays</button>
+        </div>
+        <div className="data-container">
+          {
+            this.state.tabtype==='Upcoming' && <UpcomingHolidays/>
+          }
+          {
+            this.state.tabtype==='Passed' && <PassedHolidays/>
+          }
+
+        </div>
+      </div>
+    )
+  }
 }
-
 export default App;
