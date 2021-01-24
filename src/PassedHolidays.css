@@ -26,3 +26,10 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4);
 }
+.inner-container{
+    background-color: #fefefe;
+    margin:auto;
+    padding: 10px 40px 20px 40px;
+    border: 1px solid #888;
+    width: 65%;
+}
