@@ -6,16 +6,17 @@ class UpcomingHolidays extends Component{
     state={
         loading :true,
         Data: null,
+        on:false,
+        // current date time
         currentDateTime:new Date().toLocaleDateString(),
         currentDay:new Date().toLocaleDateString().split('/')[1],
         currentMonth:new Date().toLocaleDateString().split('/')[0],
         currentYear:new Date().toLocaleDateString().split('/')[2],
-        on:false
-
+        UpcomingHoliday:null
       };
-  
+    //   api call
     async componentDidMount(){
-      const url ="https://calendarific.com/api/v2/holidays?country=IN&year=2021&api_key=1bdeec04be6a3d87e3bc663f16d62a9bead28a6a";
+      const url ="https://calendarific.com/api/v2/holidays?country=IN&year=2019&api_key=1bdeec04be6a3d87e3bc663f16d62a9bead28a6a";
       const response = await fetch(url);
       const data = await response.json();
       this.setState({
@@ -73,11 +74,8 @@ class UpcomingHolidays extends Component{
         }    
     }
     
- 
-    
     render(){
         const month =["January","February","March","April","May","June","July","August","September","October","November","December"];
-        
         return(
             <div>
                 {this.state.loading || !this.state.Data ?(
@@ -86,39 +84,13 @@ class UpcomingHolidays extends Component{
                     <div className= " main-container-btn">
                         
                         {this.state.Data.map((item ,i )=>
-                            <button className="content-btn" onClick={()=>this.clickme(i)}>
-                                {item.date.datetime.day}<br/>
-                                {month[item.date.datetime.month-1]} 
-                            </button>
-                            // {
-                            //     if (this.state.currentMonth<item.date.datetime.month) {
-                            //         <button className="content-btn" onClick={()=>this.clickme(i)}>
-                            //             {item.date.datetime.day}<br/>
-                            //             {month[item.date.datetime.month-1]} 
-                            //         </button>
-                            //     } else if(this.state.currentMonth === item.date.datetime.month) {
-                            //         if (this.state.currentDay<item.date.datetime.day) {
-                            //             <button className="content-btn" onClick={()=>this.clickme(i)}>
-                            //                 {item.date.datetime.day}<br/>
-                            //                 {month[item.date.datetime.month-1]} 
-                            //             </button> 
-                            //         }
-                            //     }else{
-                            //         <div>sbbsb</div>
-                            //     }
-                            // }
+                                <button id="content-btn" key={item.id} onClick={()=>this.clickme(i)}>
+                                    {item.date.datetime.day}<br/>
+                                    {month[item.date.datetime.month-1]}
+                                </button>     
                         )}
                         <div id="content" >
-                            {/* <div>
-                                <p>{this.state.Data[value].date.datetime.day}
-                                    {month[this.state.Data[value].date.datetime.month-1]}
-                                    {this.state.Data[value].date.datetime.year}</p>
-                                <p>{this.state.Data[value].name}</p>
-                                <div>{this.state.Data[value].type}</div>
-                                <p>{this.state.Data[value].description}</p>
-                                <button onClick={this.closeme}>Close</button>
-                             
-                            </div>     */}
+                            
                             
                         </div>
                     </div>

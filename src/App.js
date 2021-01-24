@@ -4,21 +4,21 @@ import PassedHolidays from "./PassedHolidays";
 import UpcomingHolidays from "./UpcomingHolidays";
 class App extends Component{
 
-  constructor(props){
-    super(props)
-    this.state={
-        tabtype: 'Upcoming'
-    }
-  }
+  state={
+    
+    tabtype: 'Upcoming'
+  };
+  //   api call
+  
   toggleMe=(value)=>{
     this.setState({
         tabtype:value,   
     })
   };
-
   render(){
     return(
-      <div className="main-container">
+    
+      <div className="main-container">  
         <div>NO Holiday</div>
         <div className="btns">
           <button className="btn" onClick={()=>this.toggleMe('Upcoming')}>Upcoming Holidays</button>
@@ -33,6 +33,7 @@ class App extends Component{
           }
 
         </div>
+  
       </div>
     )
   }

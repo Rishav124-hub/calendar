@@ -1,4 +1,4 @@
-import React, { Component , useState} from "react";
+import React, { Component } from "react";
 import  "./PassedHolidays.css";
 
 class PassedHolidays extends Component{
@@ -18,7 +18,7 @@ class PassedHolidays extends Component{
       console.log(data.response.holidays);
     }
 
-    // const [modalIsOpen, setModalIsOpen] = React.useState(false)
+    
     
     clickme=(value)=>{
         // creating a model and and adding content in the model
@@ -74,12 +74,12 @@ class PassedHolidays extends Component{
         return(
             <div>
                 
-                {this.state.loading || !this.state.Data ?(
+                {this.state.loading  ?(
                     <div>Loading......</div>
                 ):(
                     <div className= " main-container-btn">
                         {this.state.Data.map((item ,i )=>
-                            <button className="content-btn" onClick={()=>this.clickme(i)}>
+                            <button id="content-btn" onClick={()=>this.clickme(i)}>
                                 {item.date.datetime.day}<br/>
                                 {month[item.date.datetime.month-1]} 
                             </button>
