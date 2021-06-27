@@ -6,19 +6,49 @@ class PassedHolidays extends Component{
     state={
         loading :true,
         Data: null,
-        currentDateTime: Date().toLocaleString(),
-        on:false
+        on:false,
+        // current date time
+        currentDateTime:new Date().toLocaleDateString(),
+        currentDay:new Date().toLocaleDateString().split('/')[1],
+        currentMonth:new Date().toLocaleDateString().split('/')[0],
+        currentYear:new Date().toLocaleDateString().split('/')[2],
+        UpcomingHoliday:null
       };
-  
+    //   api call
     async componentDidMount(){
-      const url ="https://calendarific.com/api/v2/holidays?country=IN&year=2019&api_key=1bdeec04be6a3d87e3bc663f16d62a9bead28a6a";
+      const url ="https://calendarific.com/api/v2/holidays?country=IN&year=2021&api_key=633e1b568bf333902e4da88af99852664097bfdb";
       const response = await fetch(url);
       const data = await response.json();
-      this.setState({Data: data.response.holidays ,loading: false});
-      console.log(data.response.holidays);
+      if(this.state.currentMonth<10){
+        this.setState({
+            Data: data.response.holidays,
+            loading: false,
+            currentDateTime:this.state.currentYear + '-' + '0' +this.state.currentMonth + '-' + this.state.currentDay
+            });
+        }else{
+            this.setState({
+                Data: data.response.holidays,
+                loading: false,
+                currentDateTime:this.state.currentYear + '-' +this.state.currentMonth + '-' + this.state.currentDay
+                });
+        }
+        console.log(data.response.holidays);
+        console.log(this.state.currentDateTime);
+        console.log("Data",this.state.Data[50].date.iso)
+        console.log(this.state.Data[50].date.iso>this.state.currentDateTime)
+        var passedData=[]
+        for(var i=0; i<this.state.Data.length;i++){
+            if(this.state.Data[i].date.iso<this.state.currentDateTime){
+                console.log(this.state.Data[i].date.iso);
+                console.log(this.state.currentDateTime);
+                passedData[i]=this.state.Data[i]
+                console.log("Data",passedData)
+            }    
+        }
+        this.setState({
+            Data: passedData,
+        })
     }
-
-    
     
     clickme=(value)=>{
         // creating a model and and adding content in the model
