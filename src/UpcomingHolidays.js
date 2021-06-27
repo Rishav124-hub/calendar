@@ -12,7 +12,6 @@ class UpcomingHolidays extends Component{
         currentDay:new Date().toLocaleDateString().split('/')[1],
         currentMonth:new Date().toLocaleDateString().split('/')[0],
         currentYear:new Date().toLocaleDateString().split('/')[2],
-        UpcomingHoliday:null
       };
     //   api call
     async componentDidMount(){
@@ -32,22 +31,19 @@ class UpcomingHolidays extends Component{
                 currentDateTime:this.state.currentYear + '-' +this.state.currentMonth + '-' + this.state.currentDay
                 });
         }
-        console.log(data.response.holidays);
-        console.log(this.state.currentDateTime);
-        console.log("Data",this.state.Data[50].date.iso)
-        console.log(this.state.Data[50].date.iso>this.state.currentDateTime)
         var upcommingData=[]
+        var j=0
         for(var i=0; i<this.state.Data.length;i++){
             if(this.state.Data[i].date.iso>this.state.currentDateTime){
-                console.log(this.state.Data[i].date.iso);
-                console.log(this.state.currentDateTime);
-                upcommingData[i]=this.state.Data[i]
+                upcommingData[j]=this.state.Data[i]
+                j++
                 console.log("Data",upcommingData)
             }    
         }
         this.setState({
             Data: upcommingData,
         })
+        console.log("hello",this.state.Data)
     }
 
     clickme=(value)=>{
