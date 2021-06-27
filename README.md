@@ -1,12 +1,15 @@
 # HoliDay Calendar
-    # In this Calendar first It's show that today is holiday or not 
-    # then there is two button 
-        * Upcoming Holiday
-        * Passed Holiday
-    # By default it is clicked Upcoming Holiday
-        * ANd it's show the Upcoming list of holiday
-    # And If we click the passed Holiday 
-        * It's show the list of passed Holiday
+    In this Calendar first It's show that today is holiday or not 
+    then there is two button 
+        - Upcoming Holiday
+        - Passed Holiday
+    By default it is clicked Upcoming Holiday
+        - ANd it's show the Upcoming list of holiday
+    And If we click the passed Holiday 
+        - It's show the list of passed Holiday
+    And There is One more thing If we click In any list of Date
+        - Then it's show all the detail of the Holiday
+        
 
 # Getting Started with Create React App
 
