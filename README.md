@@ -1,17 +1,25 @@
 # HoliDay Calendar
-    In this Calendar first It's show that today is holiday or not 
-    then there is two button 
+   * In this Calendar first It's show that today is holiday or not  
+        - If today is no holiday
+   ![image](https://user-images.githubusercontent.com/72195033/123582271-27d58580-d7fb-11eb-9b64-c403f43c0b5d.png)
+        - if today is hoiday
+   ![image](https://user-images.githubusercontent.com/72195033/123582438-7125d500-d7fb-11eb-8fe3-54e531483068.png)
+   
+   * then there is two button 
         - Upcoming Holiday
         - Passed Holiday
-    By default it is clicked Upcoming Holiday
+    
+   * By default it is clicked Upcoming Holiday
         - ANd it's show the Upcoming list of holiday
-    And If we click the passed Holiday 
-        - It's show the list of passed Holiday
-    And There is One more thing If we click In any list of Date
-        - Then it's show all the detail of the Holiday
-        
-    ![image](https://user-images.githubusercontent.com/72195033/123582271-27d58580-d7fb-11eb-9b64-c403f43c0b5d.png)
+     ![image](https://user-images.githubusercontent.com/72195033/123583332-0f666a80-d7fd-11eb-992c-675bf64211dd.png)
 
+   * And If we click the passed Holiday 
+        - It's show the list of passed Holiday
+    ![image](https://user-images.githubusercontent.com/72195033/123583499-49d00780-d7fd-11eb-8665-fe7812870b56.png)
+
+   * And There is One more thing If we click In any list of Date
+        - Then it's show all the detail of the Holiday
+    ![image](https://user-images.githubusercontent.com/72195033/123583541-64a27c00-d7fd-11eb-9a39-8e25559522c6.png)
 
 # Getting Started with Create React App
 
