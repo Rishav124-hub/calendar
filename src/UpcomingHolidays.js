@@ -15,7 +15,7 @@ class UpcomingHolidays extends Component{
       };
     //   api call
     async componentDidMount(){
-      const url ="https://calendarific.com/api/v2/holidays?country=IN&year=2021&api_key=633e1b568bf333902e4da88af99852664097bfdb";
+      const url ='https://calendarific.com/api/v2/holidays?country=IN&year='+[this.state.currentYear]+'&api_key=633e1b568bf333902e4da88af99852664097bfdb';
       const response = await fetch(url);
       const data = await response.json();
       if(this.state.currentMonth<10){
