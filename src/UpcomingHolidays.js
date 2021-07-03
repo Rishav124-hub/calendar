@@ -22,7 +22,7 @@ class UpcomingHolidays extends Component{
         this.setState({
             Data: data.response.holidays,
             loading: false,
-            currentDateTime:this.state.currentYear + '-' + '0' +this.state.currentMonth + '-' + this.state.currentDay
+            currentDateTime:this.state.currentYear + '-0' +this.state.currentMonth + '-' + this.state.currentDay
             });
         }else{
             this.setState({
